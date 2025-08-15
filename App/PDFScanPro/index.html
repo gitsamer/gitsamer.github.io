@@ -1,51 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>PDFScan Pro</title>
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #f9f9f9;
-          margin: 0;
-          padding: 0;
-          text-align: center;
-        }
-        header {
-          background-color: #3f51b5;
-          color: white;
-          padding: 2rem 1rem;
-        }
-        main {
-          padding: 2rem;
-        }
-        h1 {
-          margin-bottom: 0.5rem;
-        }
-        p {
-          font-size: 1.2rem;
-          color: #333;
-        }
-        footer {
-          background-color: #eee;
-          padding: 1rem;
-          margin-top: 2rem;
-          font-size: 0.9rem;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFScan Pro - Professional Document Scanning & PDF Management</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="PDFScan Pro: Professional document scanning, PDF creation, annotation, and signature app. Free trial + premium features. Download for Android and iOS.">
+    <meta name="keywords" content="document scanner, PDF creator, PDF editor, document annotation, digital signature, mobile scanner, PDF converter, OCR scanner">
+    <meta name="author" content="PDFScan Pro">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gitsamer.github.io/App/PDFScanPro/">
+    <meta property="og:title" content="PDFScan Pro - Professional Document Scanning & PDF Management">
+    <meta property="og:description" content="Scan documents, create PDFs, add annotations and signatures. Free 7-day trial + premium features available.">
+    <meta property="og:image" content="https://gitsamer.github.io/App/PDFScanPro/assets/images/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gitsamer.github.io/App/PDFScanPro/">
+    <meta property="twitter:title" content="PDFScan Pro - Professional Document Scanning & PDF Management">
+    <meta property="twitter:description" content="Scan documents, create PDFs, add annotations and signatures. Free 7-day trial + premium features available.">
+    <meta property="twitter:image" content="https://gitsamer.github.io/App/PDFScanPro/assets/images/logo.png">
+    
+    <!-- App Store / Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PDFScan Pro">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/icon.png">
+    <link rel="apple-touch-icon" href="assets/images/icon.png">
+    
+    <!-- Structured Data for Search Engines & LLMs -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "PDFScan Pro",
+        "description": "Professional document scanning and PDF management application with annotation and signature capabilities",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": ["Android", "iOS"],
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "7-day free trial with basic features"
+            },
+            {
+                "@type": "Offer",
+                "price": "4.99",
+                "priceCurrency": "USD",
+                "description": "Monthly Premium Subscription"
+            },
+            {
+                "@type": "Offer",
+                "price": "24.99",
+                "priceCurrency": "USD",
+                "description": "Yearly Premium Subscription"
+            }
+        ],
+        "featureList": [
+            "Document scanning with multiple pages",
+            "PDF creation and conversion",
+            "Document annotation and markup",
+            "Digital signature creation",
+            "Image to PDF conversion",
+            "OCR text recognition",
+            "Cloud-free local processing"
+        ],
+        "screenshot": [
+            "https://gitsamer.github.io/App/PDFScanPro/assets/images/screenshots/home_screen.jpg",
+            "https://gitsamer.github.io/App/PDFScanPro/assets/images/screenshots/scan_doc_p1.jpg",
+            "https://gitsamer.github.io/App/PDFScanPro/assets/images/screenshots/pdf_preview.jpg"
+        ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<header>
-    <h1>PDFScan Pro</h1>
-    <p>Powerful Tools for Document Scanning & PDF Management</p>
-</header>
-<main>
-    <p><strong>PDFScan Pro</strong> lets you scan documents, generate PDFs, read & annotate PDFs, fill out forms, and sign documents — all in one place.</p>
-    <p>Coming soon to App Stores!</p>
-</main>
-<footer>
-    &copy; 2025 PDFScan Pro. All rights reserved.
-</footer>
+    <!-- Header -->
+    <header class="hero">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/logo.png" alt="PDFScan Pro Logo" class="logo">
+                    <h1>PDFScan Pro</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="comparison.html">Compare</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Professional Document Scanning & PDF Management</h1>
+            <p class="hero-subtitle">Transform your mobile device into a powerful document scanner. Create, edit, annotate, and sign PDFs with ease.</p>
+            
+            <div class="hero-badges">
+                <span class="badge">✓ 7-Day Free Trial</span>
+                <span class="badge">✓ Local Processing</span>
+                <span class="badge">✓ No Cloud Required</span>
+                <span class="badge">✓ Premium Features</span>
+            </div>
+            
+            <div class="download-buttons" id="download">
+                <a href="#" class="download-btn disabled" data-store="ios">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
+                    <span class="coming-soon">Coming Soon</span>
+                </a>
+                <a href="#" class="download-btn disabled" data-store="android">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                    <span class="coming-soon">Coming Soon</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Multi-Page Scanning</h3>
+                    <p>Scan multiple pages and combine them into a single PDF with customizable quality settings.</p>
+                    <span class="feature-type free">Free Feature</span>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>Image to PDF Conversion</h3>
+                    <p>Convert multiple images into PDFs with options to arrange and organize pages.</p>
+                    <span class="feature-type free">Free Feature</span>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>PDF Viewer & Reader</h3>
+                    <p>View and read PDF documents and images with smooth navigation and zoom capabilities.</p>
+                    <span class="feature-type free">Free Feature</span>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✏️</div>
+                    <h3>Advanced Annotations</h3>
+                    <p>Add text annotations, drawings, and professional markup to your documents.</p>
+                    <span class="feature-type premium">Premium Feature</span>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">✍️</div>
+                    <h3>Digital Signatures</h3>
+                    <p>Create, manage, and apply professional digital signatures to documents.</p>
+                    <span class="feature-type premium">Premium Feature</span>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Form Filling</h3>
+                    <p>Fill out PDF forms electronically with advanced editing tools.</p>
+                    <span class="feature-type premium">Premium Feature</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2>See PDFScan Pro in Action</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/home_screen.jpg" alt="PDFScan Pro Home Screen" loading="lazy">
+                    <h3>Home Screen</h3>
+                    <p>Clean and intuitive interface for all your document needs</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/scan_doc_p1.jpg" alt="Document Scanning Process" loading="lazy">
+                    <h3>Document Scanning</h3>
+                    <p>Advanced camera-based scanning with auto-detection</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/scan_doc_p2_last.jpg" alt="Scan Completion" loading="lazy">
+                    <h3>Scan Review</h3>
+                    <p>Review and adjust scanned documents before saving</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/pdf_preview.jpg" alt="PDF Preview" loading="lazy">
+                    <h3>PDF Preview</h3>
+                    <p>High-quality PDF viewing with smooth navigation</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/editor_annotation_mode.jpg" alt="Annotation Editor" loading="lazy">
+                    <h3>Annotation Tools</h3>
+                    <p>Professional annotation and markup capabilities</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/premium_subscription_p1.jpg" alt="Premium Subscription" loading="lazy">
+                    <h3>Premium Features</h3>
+                    <p>Unlock advanced features with premium subscription</p>
+                </div>
+                
+                <div class="screenshot-item">
+                    <img src="assets/images/screenshots/pdf_image_annotation_draw_signature.jpg" alt="Digital Signature" loading="lazy">
+                    <h3>Digital Signatures</h3>
+                    <p>Create and apply professional signatures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free Trial</h3>
+                    <div class="price">$0</div>
+                    <div class="period">7 Days + 7 Guest Days</div>
+                    <ul class="features-list">
+                        <li>✓ Document scanning</li>
+                        <li>✓ PDF creation</li>
+                        <li>✓ Basic PDF viewing</li>
+                        <li>✓ Image to PDF conversion</li>
+                        <li>✓ Local processing</li>
+                    </ul>
+                    <p class="note">After trial: Free account for basic features</p>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Premium Monthly</h3>
+                    <div class="price">$4.99</div>
+                    <div class="period">per month</div>
+                    <ul class="features-list">
+                        <li>✓ All free features</li>
+                        <li>✓ Advanced annotations</li>
+                        <li>✓ Digital signatures</li>
+                        <li>✓ Form filling</li>
+                        <li>✓ Premium support</li>
+                        <li>✓ 3-day premium trial</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="savings-badge">Save 58%</div>
+                    <h3>Premium Yearly</h3>
+                    <div class="price">$24.99</div>
+                    <div class="period">per year</div>
+                    <ul class="features-list">
+                        <li>✓ All premium features</li>
+                        <li>✓ Best value</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Early access to features</li>
+                        <li>✓ Cancel anytime</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy & Security Section -->
+    <section class="privacy-security">
+        <div class="container">
+            <h2>Privacy & Security First</h2>
+            <div class="privacy-grid">
+                <div class="privacy-item">
+                    <div class="privacy-icon">🔒</div>
+                    <h3>Local Processing</h3>
+                    <p>All documents are processed locally on your device. No cloud storage required.</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <div class="privacy-icon">🛡️</div>
+                    <h3>Data Protection</h3>
+                    <p>Your documents never leave your device unless you choose to share them.</p>
+                </div>
+                
+                <div class="privacy-item">
+                    <div class="privacy-icon">🔐</div>
+                    <h3>Secure by Design</h3>
+                    <p>Built with privacy by default and GDPR compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What happens after the 7-day trial?</h3>
+                    <p>You can continue using basic features (scanning, PDF creation) with a free account. Premium features require a subscription.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do my documents go to the cloud?</h3>
+                    <p>No. All document processing happens locally on your device. Your documents stay private and under your control.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I cancel my subscription anytime?</h3>
+                    <p>Yes, you can cancel through your app store settings. Cancellation takes effect at the end of your billing period.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What premium features are included?</h3>
+                    <p>Premium includes advanced annotations, digital signatures, form filling, and priority support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PDFScan Pro</h3>
+                    <p>Professional document scanning and PDF management for mobile devices.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Compare</h3>
+                    <ul>
+                        <li><a href="comparison.html">vs. Other Apps</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Download</h3>
+                    <p>Available soon on iOS and Android</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PDFScan Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
