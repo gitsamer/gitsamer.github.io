@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>PDFScan Pro</title>
+    <title>Balshoo - Digital Solutions & Apps</title>
+    <meta name="description" content="Balshoo.com - Digital solutions and mobile applications. Featuring PDFScan Pro document scanning app and other digital tools.">
+    <meta name="keywords" content="Balshoo, digital solutions, mobile apps, PDFScan Pro, document scanning">
+    
     <style>
         body {
           font-family: Arial, sans-serif;
@@ -27,25 +30,102 @@
           font-size: 1.2rem;
           color: #333;
         }
+        .apps-section {
+          background: white;
+          margin: 2rem auto;
+          max-width: 800px;
+          padding: 2rem;
+          border-radius: 12px;
+          box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .app-card {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 2rem;
+          border-radius: 12px;
+          margin: 2rem 0;
+          text-decoration: none;
+          display: block;
+          transition: transform 0.3s ease;
+        }
+        .app-card:hover {
+          transform: translateY(-5px);
+          text-decoration: none;
+          color: white;
+        }
+        .app-card h3 {
+          margin: 0 0 1rem 0;
+          font-size: 1.5rem;
+        }
+        .app-card p {
+          color: rgba(255,255,255,0.9);
+          margin: 0;
+        }
+        .features-list {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          margin: 1rem 0;
+          flex-wrap: wrap;
+        }
+        .feature {
+          background: rgba(255,255,255,0.1);
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-size: 0.9rem;
+        }
         footer {
           background-color: #eee;
           padding: 1rem;
           margin-top: 2rem;
           font-size: 0.9rem;
         }
+        @media (max-width: 768px) {
+          .features-list {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+          }
+        }
     </style>
 </head>
 <body>
 <header>
-    <h1>PDFScan Pro</h1>
-    <p>Powerful Tools for Document Scanning & PDF Management</p>
+    <h1>Balshoo</h1>
+    <p>Digital Solutions & Mobile Applications</p>
 </header>
 <main>
-    <p><strong>PDFScan Pro</strong> lets you scan documents, generate PDFs, read & annotate PDFs, fill out forms, and sign documents — all in one place.</p>
-    <p>Coming soon to App Stores!</p>
+    <p>Welcome to <strong>Balshoo.com</strong> - Your destination for innovative digital solutions and mobile applications.</p>
+    
+    <div class="apps-section">
+        <h2>Our Applications</h2>
+        
+        <a href="App/PDFScanPro/" class="app-card">
+            <h3>📱 PDFScan Pro</h3>
+            <p>Professional document scanning and PDF management application</p>
+            <div class="features-list">
+                <span class="feature">✓ Local Processing</span>
+                <span class="feature">✓ Privacy-Focused</span>
+                <span class="feature">✓ Premium Features</span>
+                <span class="feature">✓ 7-Day Free Trial</span>
+            </div>
+            <p style="margin-top: 1rem; font-weight: 600;">Click to explore PDFScan Pro →</p>
+        </a>
+        
+        <!-- Placeholder for future apps -->
+        <div style="background: #f8f9ff; padding: 2rem; border-radius: 12px; border: 2px dashed #667eea; margin: 2rem 0;">
+            <h3 style="color: #667eea; margin-bottom: 1rem;">More Apps Coming Soon</h3>
+            <p style="color: #666;">We're working on additional digital solutions to help you be more productive.</p>
+        </div>
+    </div>
+    
+    <div style="max-width: 600px; margin: 2rem auto; padding: 1.5rem; background: #e3f2fd; border-radius: 8px;">
+        <h3 style="color: #1976d2; margin-bottom: 1rem;">🚀 What We Do</h3>
+        <p style="color: #1565c0; margin: 0;">Balshoo creates privacy-focused, user-friendly mobile applications that solve real-world problems. Our apps prioritize your data security and provide professional-grade tools without compromising on ease of use.</p>
+    </div>
 </main>
 <footer>
-    &copy; 2025 PDFScan Pro. All rights reserved.
+    <p>&copy; 2025 Balshoo. All rights reserved. | <a href="App/PDFScanPro/" style="color: #3f51b5;">Visit PDFScan Pro</a></p>
 </footer>
 </body>
 </html>
