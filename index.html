@@ -1,131 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Balshoo - Digital Solutions & Apps</title>
-    <meta name="description" content="Balshoo.com - Digital solutions and mobile applications. Featuring PDFScan Pro document scanning app and other digital tools.">
-    <meta name="keywords" content="Balshoo, digital solutions, mobile apps, PDFScan Pro, document scanning">
-    
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #f9f9f9;
-          margin: 0;
-          padding: 0;
-          text-align: center;
-        }
-        header {
-          background-color: #3f51b5;
-          color: white;
-          padding: 2rem 1rem;
-        }
-        main {
-          padding: 2rem;
-        }
-        h1 {
-          margin-bottom: 0.5rem;
-        }
-        p {
-          font-size: 1.2rem;
-          color: #333;
-        }
-        .apps-section {
-          background: white;
-          margin: 2rem auto;
-          max-width: 800px;
-          padding: 2rem;
-          border-radius: 12px;
-          box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        .app-card {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
-          padding: 2rem;
-          border-radius: 12px;
-          margin: 2rem 0;
-          text-decoration: none;
-          display: block;
-          transition: transform 0.3s ease;
-        }
-        .app-card:hover {
-          transform: translateY(-5px);
-          text-decoration: none;
-          color: white;
-        }
-        .app-card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-        .app-card p {
-          color: rgba(255,255,255,0.9);
-          margin: 0;
-        }
-        .features-list {
-          display: flex;
-          justify-content: center;
-          gap: 2rem;
-          margin: 1rem 0;
-          flex-wrap: wrap;
-        }
-        .feature {
-          background: rgba(255,255,255,0.1);
-          padding: 0.5rem 1rem;
-          border-radius: 20px;
-          font-size: 0.9rem;
-        }
-        footer {
-          background-color: #eee;
-          padding: 1rem;
-          margin-top: 2rem;
-          font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-          .features-list {
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-          }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Balshoo - Digital Solutions & Mobile Applications. Discover Kado, your personal food health analyzer.">
+  <meta name="keywords" content="food scanner, nutrition app, health app, ingredient analyzer, Kado">
+  <title>Balshoo - Digital Solutions & Apps</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
 </head>
 <body>
-<header>
-    <h1>Balshoo</h1>
-    <p>Digital Solutions & Mobile Applications</p>
-</header>
-<main>
-    <p>Welcome to <strong>Balshoo.com</strong> - Your destination for innovative digital solutions and mobile applications.</p>
-    
-    <div class="apps-section">
-        <h2>Our Applications</h2>
-        
-        <a href="App/PDFScanPro/" class="app-card">
-            <h3>📱 PDFScan Pro</h3>
-            <p>Professional document scanning and PDF management application</p>
-            <div class="features-list">
-                <span class="feature">✓ Local Processing</span>
-                <span class="feature">✓ Privacy-Focused</span>
-                <span class="feature">✓ Premium Features</span>
-                <span class="feature">✓ 7-Day Free Trial</span>
-            </div>
-            <p style="margin-top: 1rem; font-weight: 600;">Click to explore PDFScan Pro →</p>
-        </a>
-        
-        <!-- Placeholder for future apps -->
-        <div style="background: #f8f9ff; padding: 2rem; border-radius: 12px; border: 2px dashed #667eea; margin: 2rem 0;">
-            <h3 style="color: #667eea; margin-bottom: 1rem;">More Apps Coming Soon</h3>
-            <p style="color: #666;">We're working on additional digital solutions to help you be more productive.</p>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <span>🥑</span>
+          <span>Balshoo</span>
         </div>
+        <ul>
+          <li><a href="#apps">Apps</a></li>
+          <li><a href="kado/">Kado</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="mailto:support.kado@balshoo.com">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    
-    <div style="max-width: 600px; margin: 2rem auto; padding: 1.5rem; background: #e3f2fd; border-radius: 8px;">
-        <h3 style="color: #1976d2; margin-bottom: 1rem;">🚀 What We Do</h3>
-        <p style="color: #1565c0; margin: 0;">Balshoo creates privacy-focused, user-friendly mobile applications that solve real-world problems. Our apps prioritize your data security and provide professional-grade tools without compromising on ease of use.</p>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Digital Solutions for Healthier Living</h1>
+      <p>Privacy-focused mobile applications that empower you to make better choices every day.</p>
+      <div class="btn-group">
+        <a href="kado/" class="btn btn-primary">Explore Kado</a>
+        <a href="#apps" class="btn btn-secondary">View All Apps</a>
+      </div>
     </div>
-</main>
-<footer>
-    <p>&copy; 2025 Balshoo. All rights reserved. | <a href="App/PDFScanPro/" style="color: #3f51b5;">Visit PDFScan Pro</a></p>
-</footer>
+  </section>
+
+  <!-- Our Applications -->
+  <section class="section" id="apps">
+    <div class="container">
+      <h2 class="text-center mb-4">Our Applications</h2>
+      
+      <div class="apps-grid">
+        <!-- Kado App Card -->
+        <div class="app-card">
+          <img src="kado/assets/kado-icon.png" alt="Kado App Icon">
+          <span class="app-status status-available">Available on Android</span>
+          <h3>Kado</h3>
+          <p>Your Personal Food Health Analyzer</p>
+          <p>Scan products, analyze ingredients, and get personalized health scores based on YOUR conditions.</p>
+          <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+            <li>✓ Custom health scoring</li>
+            <li>✓ AI-powered ingredient analysis</li>
+            <li>✓ Family profiles support</li>
+            <li>✓ Open & Community databases</li>
+          </ul>
+          <a href="kado/" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Learn More</a>
+        </div>
+
+        <!-- PDFScan Pro Card -->
+        <div class="app-card">
+          <img src="assets/pdfscan-icon.png" alt="PDFScan Pro Icon" style="opacity: 0.6;">
+          <span class="app-status status-coming-soon">In Development</span>
+          <h3>PDFScan Pro</h3>
+          <p>Professional Document Scanning</p>
+          <p>High-quality document scanning and PDF management with local processing for maximum privacy.</p>
+          <ul style="list-style: none; padding: 0; margin: 1rem 0; color: #9E9E9E;">
+            <li>✓ Local processing</li>
+            <li>✓ Privacy-focused</li>
+            <li>✓ Premium features</li>
+            <li>✓ Professional quality</li>
+          </ul>
+          <button class="btn btn-disabled" style="width: 100%; margin-top: 1rem;" disabled>Coming Soon</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about" style="background: var(--bg-light);">
+    <div class="container text-center">
+      <h2 class="mb-4">🚀 What We Do</h2>
+      <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem;">
+        Balshoo creates <strong>privacy-focused, user-friendly mobile applications</strong> that solve real-world problems. 
+        Our apps prioritize your data security and provide professional-grade tools without compromising on ease of use.
+      </p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h4>Privacy First</h4>
+          <p>Your data stays on your device or in secure, encrypted storage.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h4>User-Focused</h4>
+          <p>Simple, intuitive interfaces designed for real people.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h4>Powerful Features</h4>
+          <p>Professional-grade tools accessible to everyone.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h4>Community-Driven</h4>
+          <p>Built with feedback from users around the world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="kado/">Kado App</a></li>
+            <li><a href="#apps">All Apps</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="mailto:support.kado@balshoo.com">Contact Us</a></li>
+            <li><a href="kado/privacy.html">Privacy Policy</a></li>
+            <li><a href="kado/terms.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Balshoo</a></li>
+            <li><a href="https://www.instagram.com/kado_health" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="kado/data-security.html">Data Security</a></li>
+            <li><a href="kado/support.html">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Balshoo. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Load config and update dynamic content
+    document.addEventListener('DOMContentLoaded', function() {
+      // Could add dynamic content updates here if needed
+      console.log('Balshoo website loaded');
+    });
+  </script>
 </body>
 </html>
