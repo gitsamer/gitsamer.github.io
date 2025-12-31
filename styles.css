@@ -186,7 +186,8 @@ nav ul li a:hover {
 }
 
 .store-badge img {
-  height: 50px;
+  height: 60px;
+  width: auto;
 }
 
 .store-badge:hover {
@@ -194,7 +195,6 @@ nav ul li a:hover {
 }
 
 .store-badge.disabled {
-  opacity: 0.5;
   cursor: not-allowed;
 }
 
