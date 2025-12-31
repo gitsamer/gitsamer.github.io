@@ -186,8 +186,8 @@ nav ul li a:hover {
 }
 
 .store-badge img {
-  height: 80px;
-  width: auto;
+  height: auto;
+  width: 180px;
 }
 
 .store-badge:hover {
