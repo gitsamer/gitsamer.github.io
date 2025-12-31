@@ -62,12 +62,12 @@ const KadoConfig = {
   databases: {
     open: {
       name: "Open Database",
-      description: "Open Food Facts (OFF) - Comprehensive crowd-sourced food database",
+      description: "Comprehensive global food database with millions of products contributed by users worldwide",
       access: "All users"
     },
     community: {
       name: "Community Database",
-      description: "Balshoo's Firebase database - Failover for products not in OFF",
+      description: "Our curated database serving as a backup for products not yet in the Open Database",
       access: "All users"
     }
   },
