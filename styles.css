@@ -174,7 +174,7 @@ nav ul li a:hover {
 /* Store Badges */
 .store-badges {
   display: flex;
-  gap: 1rem;
+  gap: 2.5rem;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
@@ -186,7 +186,7 @@ nav ul li a:hover {
 }
 
 .store-badge img {
-  height: 60px;
+  height: 80px;
   width: auto;
 }
 
