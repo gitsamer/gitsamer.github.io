@@ -1,1 +1,353 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Kado - Food Health Analyzer</title>
+    
+    <!-- Open Graph meta tags for rich link previews (WhatsApp, Facebook, etc.) -->
+    <meta property="og:site_name" content="Kado - Food Health Analyzer">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="View Product in Kado" id="og-title">
+    <meta property="og:description" content="Analyze this product's health score in Kado" id="og-description">
+    <meta property="og:image" content="https://gitsamer.github.io/App/kado/assets/kado-icon.jpg" id="og-image">
+    <meta property="og:url" content="" id="og-url">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="View Product in Kado" id="twitter-title">
+    <meta name="twitter:description" content="Analyze this product's health score in Kado" id="twitter-description">
+    <meta name="twitter:image" content="https://gitsamer.github.io/App/kado/assets/kado-icon.jpg" id="twitter-image">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .app-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        
+        .product-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .product-card.show {
+            display: block;
+        }
+        
+        .product-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #e9ecef;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .product-brand {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .score-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .score-good { background: #28a745; }
+        .score-fair { background: #ffc107; color: #333; }
+        .score-poor { background: #dc3545; }
+        
+        .loading {
+            color: #666;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-bottom: 12px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+        
+        .error {
+            color: #dc3545;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="../assets/kado-icon.jpg" alt="Kado Logo" id="logo-img">
+        </div>
+        
+        <h1 class="app-name">Kado</h1>
+        <p class="tagline">Food Health Analyzer</p>
+        
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading product...</p>
+        </div>
+        
+        <div id="error" class="error" style="display: none;"></div>
+        
+        <div id="product-card" class="product-card">
+            <div class="product-image">
+                <img id="product-img" src="" alt="Product">
+            </div>
+            <h2 class="product-name" id="product-name">Product Name</h2>
+            <p class="product-brand" id="product-brand">Brand Name</p>
+            <span id="score-badge" class="score-badge">Loading...</span>
+        </div>
+        
+        <button id="open-app-btn" class="btn btn-primary" onclick="openInApp()">
+            Open in Kado App
+        </button>
+        
+        <a href="https://play.google.com/store/apps/details?id=com.balshoo.reko_app" 
+           class="btn btn-secondary" 
+           target="_blank">
+            Download Kado
+        </a>
+    </div>
+    
+    <script>
+        let barcode = '';
+        let productData = null;
+        
+        // Extract barcode from URL
+        function extractBarcode() {
+            const urlParams = new URLSearchParams(window.location.search);
+            barcode = urlParams.get('barcode') || '';
+            
+            if (!barcode) {
+                // Try to extract from path (e.g., /App/kado/p/1234567890)
+                const pathParts = window.location.pathname.split('/');
+                const barcodeIndex = pathParts.indexOf('p') + 1;
+                if (barcodeIndex > 0 && barcodeIndex < pathParts.length) {
+                    barcode = pathParts[barcodeIndex];
+                }
+            }
+            
+            return barcode;
+        }
+        
+        // Fetch product from Open Food Facts API
+        async function fetchProduct() {
+            if (!barcode) {
+                showError('No product barcode provided');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`https://world.openfoodfacts.org/api/v2/product/${barcode}.json`);
+                const data = await response.json();
+                
+                if (data.status === 1 && data.product) {
+                    productData = data.product;
+                    displayProduct(productData);
+                } else {
+                    showError('Product not found');
+                }
+            } catch (error) {
+                console.error('Error fetching product:', error);
+                showError('Failed to load product. Please try opening in the app.');
+            }
+        }
+        
+        // Display product information
+        function displayProduct(product) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('product-card').classList.add('show');
+            
+            // Product name
+            const productName = product.product_name || product.product_name_en || 'Unknown Product';
+            document.getElementById('product-name').textContent = productName;
+            document.getElementById('page-title').textContent = `${productName} - Kado`;
+            document.getElementById('og-title').setAttribute('content', `${productName} - View in Kado`);
+            document.getElementById('twitter-title').setAttribute('content', `${productName} - View in Kado`);
+            
+            // Brand
+            const brand = product.brands || '';
+            document.getElementById('product-brand').textContent = brand || 'Unknown Brand';
+            
+            // Product image
+            const imageUrl = product.image_url || product.image_front_url || '../assets/placeholder-product.png';
+            document.getElementById('product-img').src = imageUrl;
+            document.getElementById('og-image').setAttribute('content', imageUrl);
+            document.getElementById('twitter-image').setAttribute('content', imageUrl);
+            
+            // Calculate simple score (simplified version)
+            const nutriScore = product.nutrition_grade_fr || product.nutrition_grades;
+            let scoreText = 'View Score';
+            let scoreClass = 'score-fair';
+            
+            if (nutriScore) {
+                const scoreMap = { 'a': 'Excellent', 'b': 'Good', 'c': 'Fair', 'd': 'Poor', 'e': 'Bad' };
+                scoreText = scoreMap[nutriScore.toLowerCase()] || 'Unknown';
+                scoreClass = ['a', 'b'].includes(nutriScore.toLowerCase()) ? 'score-good' : 
+                            nutriScore.toLowerCase() === 'c' ? 'score-fair' : 'score-poor';
+            }
+            
+            const scoreBadge = document.getElementById('score-badge');
+            scoreBadge.textContent = scoreText;
+            scoreBadge.className = `score-badge ${scoreClass}`;
+            
+            // Update meta descriptions
+            const description = `${productName} - Health Score: ${scoreText}. Analyze with Kado.`;
+            document.getElementById('og-description').setAttribute('content', description);
+            document.getElementById('twitter-description').setAttribute('content', description);
+            
+            // Update URL
+            const currentUrl = window.location.href;
+            document.getElementById('og-url').setAttribute('content', currentUrl);
+        }
+        
+        // Show error message
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+        
+        // Open in app (deep link)
+        function openInApp() {
+            const deepLink = `kado://product/${barcode}`;
+            const fallbackUrl = `https://play.google.com/store/apps/details?id=com.balshoo.reko_app`;
+            
+            // Try to open app
+            window.location.href = deepLink;
+            
+            // Fallback to Play Store after delay if app doesn't open
+            setTimeout(() => {
+                window.location.href = fallbackUrl;
+            }, 2000);
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            extractBarcode();
+            if (barcode) {
+                fetchProduct();
+            } else {
+                showError('No product barcode provided');
+            }
+        });
+    </script>
+</body>
+</html>
