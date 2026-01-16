@@ -1,1 +1,12 @@
-
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.balshoo.reko_app",
+      "sha256_cert_fingerprints": [
+        "15:E6:42:BB:AF:F7:71:B7:95:95:E7:72:69:46:82:32:AC:2F:19:2A:BF:08:03:4A:0A:2E:2E:57:59:45:50:CC"
+      ]
+    }
+  }
+]
