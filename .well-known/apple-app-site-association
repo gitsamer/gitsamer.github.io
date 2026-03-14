@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.com.balshoo.kado",
+        "paths": ["/App/kado/p*"]
+      }
+    ]
+  }
+}
