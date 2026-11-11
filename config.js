@@ -7,29 +7,24 @@ const KadoConfig = {
   websiteUrl: "https://www.balshoo.com",
   instagramUrl: "https://www.instagram.com/kado_health",
   
-  // Pricing (in USD)
+  // Pricing - THE ONE PLACE TO CHANGE KADO PRICES ON THE WEBSITE.
+  // Keep in step with App Store Connect (the price reference) and Google Play.
+  // Pages show these through data-kado-price tags (filled in at the bottom of
+  // this file); the text inside those tags is only a fallback without JavaScript.
+  // Last changed 2026-11-11.
   pricing: {
-    premium: {
-      monthly: null, // Not offered
-      yearly: 15,
-      currency: "$",
-      billingCycle: "year"
-    },
-    premiumFamily: {
-      monthly: null,
-      yearly: 40,
-      maxProfiles: 4,
-      currency: "$",
-      billingCycle: "year"
-    }
+    symbol: "$",
+    individual: { yearly: 39.99, monthly: 5.99, aedYearly: 149.99, aedMonthly: 22.99 },
+    family:     { yearly: 59.99, monthly: 8.99, aedYearly: 229.99, aedMonthly: 34.99, maxProfiles: 4 },
+    note: "Prices in US dollars. The App Store or Google Play shows the price in your currency, including local taxes."
   },
-  
-  // Free Trial
+
+  // Free trial (yearly plans only, new subscribers; the stores enforce it)
   freeTrial: {
-    enabled: false,
-    days: 0
+    enabled: true,
+    days: 7
   },
-  
+
   // App Store Links
   storeLinks: {
     playStore: "https://play.google.com/store/apps/details?id=com.balshoo.kado", // Update when published
@@ -101,3 +96,31 @@ const KadoConfig = {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = KadoConfig;
 }
+
+// Fill every <span data-kado-price="..."> on the page from KadoConfig.pricing.
+// Keys: individual.yearly, individual.monthly, individual.aedYearly,
+// individual.aedMonthly, the same for family, family.maxProfiles, trial.days, note.
+(function () {
+  if (typeof document === 'undefined') return;
+  function fill() {
+    var p = KadoConfig.pricing;
+    function usd(v) { return p.symbol + v.toFixed(2); }
+    function aed(v) { return 'AED ' + v.toFixed(2); }
+    var values = { 'trial.days': String(KadoConfig.freeTrial.days), 'note': p.note };
+    ['individual', 'family'].forEach(function (plan) {
+      var x = p[plan];
+      values[plan + '.yearly'] = usd(x.yearly);
+      values[plan + '.monthly'] = usd(x.monthly);
+      values[plan + '.aedYearly'] = aed(x.aedYearly);
+      values[plan + '.aedMonthly'] = aed(x.aedMonthly);
+    });
+    values['family.maxProfiles'] = String(p.family.maxProfiles);
+    var tags = document.querySelectorAll('[data-kado-price]');
+    for (var i = 0; i < tags.length; i++) {
+      var v = values[tags[i].getAttribute('data-kado-price')];
+      if (v !== undefined) tags[i].textContent = v;
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fill);
+  else fill();
+})();
